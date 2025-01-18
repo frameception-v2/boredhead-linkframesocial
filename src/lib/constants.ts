@@ -1,3 +1,3 @@
-export const PROJECT_ID = 'linkframesocial';
+export const PROJECT_ID = 'LinkFrameSocial';
 export const PROJECT_TITLE = "LinkFrameSocial";
-export const PROJECT_DESCRIPTION = "boredhead kt 🤠's Social Links";
+export const PROJECT_DESCRIPTION = "Your gateway to decentralized social connections";
