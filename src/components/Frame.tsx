@@ -17,19 +17,48 @@ import { createStore } from "mipd";
 import { Label } from "~/components/ui/label";
 import { PROJECT_TITLE } from "~/lib/constants";
 
-function ExampleCard() {
+function SocialLinksCard() {
+  const openLink = useCallback((url: string) => {
+    sdk.actions.openUrl(url);
+  }, []);
+
   return (
     <Card className="border-neutral-200 bg-white">
       <CardHeader>
-        <CardTitle className="text-neutral-900">Welcome to the Frame Template</CardTitle>
+        <CardTitle className="text-neutral-900">boredhead kt 🤠</CardTitle>
         <CardDescription className="text-neutral-600">
-          This is an example card that you can customize or remove
+          My Social Links
         </CardDescription>
       </CardHeader>
-      <CardContent className="text-neutral-800">
-        <p>
-          Your frame content goes here. The text is intentionally dark to ensure good readability.
-        </p>
+      <CardContent className="flex flex-col gap-2 text-neutral-800">
+        <PurpleButton onClick={() => openLink('https://warpcast.com/boredhead')}>
+          Farcaster
+        </PurpleButton>
+        <PurpleButton onClick={() => openLink('https://github.com/boredhead')}>
+          GitHub
+        </PurpleButton>
+      </CardContent>
+    </Card>
+  );
+}
+
+function RecentContentCard() {
+  const openLink = useCallback((url: string) => {
+    sdk.actions.openUrl(url);
+  }, []);
+
+  return (
+    <Card className="border-neutral-200 bg-white mt-4">
+      <CardHeader>
+        <CardTitle className="text-neutral-900">Recent Shares</CardTitle>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-2 text-neutral-800">
+        <PurpleButton onClick={() => openLink('https://next-frame-psi.vercel.app/')}>
+          Frames Learning App
+        </PurpleButton>
+        <PurpleButton onClick={() => openLink('https://yapster-alpha.vercel.app/mwb-dwen-ixa')}>
+          Yapster Alpha
+        </PurpleButton>
       </CardContent>
     </Card>
   );
@@ -137,7 +166,8 @@ export default function Frame(
     >
       <div className="w-[300px] mx-auto py-2 px-2">
         <h1 className="text-2xl font-bold text-center mb-4 text-neutral-900">{title}</h1>
-        <ExampleCard />
+        <SocialLinksCard />
+        <RecentContentCard />
       </div>
     </div>
   );
